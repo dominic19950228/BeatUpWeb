@@ -9,6 +9,7 @@ body {
     width: 980px;
     height: 400px;
     background-color: black;
+    margin: auto;
 }
 
 .songlist-body {
