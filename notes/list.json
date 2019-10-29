@@ -167,6 +167,13 @@
     "slkauthor": "dnxp",
     "bpm": 140.0
   },
+  "Joint": {
+    "ogg": "Joint.aac",
+    "singer": "",
+    "name": "Joint",
+    "slkauthor": "cdiu",
+    "bpm": 180.0
+  },
   "Miracle": {
     "ogg": "Miracle.aac",
     "singer": "Super Junior",
