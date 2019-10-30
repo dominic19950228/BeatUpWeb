@@ -90,6 +90,13 @@
     "slkauthor": "Crazy",
     "bpm": 132.0
   },
+  "DeathMoon": {
+    "ogg": "DeathMoon.aac",
+    "singer": "",
+    "name": "死月",
+    "slkauthor": "新",
+    "bpm": 160.0
+  },
   "DejaVu": {
     "ogg": "DejaVu.aac",
     "singer": "SS501",
