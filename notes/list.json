@@ -174,6 +174,13 @@
     "slkauthor": "dnxp",
     "bpm": 140.0
   },
+  "Identity": {
+    "ogg": "Identity.aac",
+    "singer": "",
+    "name": "貴族III",
+    "slkauthor": "新",
+    "bpm": 150.06
+  },
   "Joint": {
     "ogg": "Joint.aac",
     "singer": "",
