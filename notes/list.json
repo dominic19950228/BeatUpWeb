@@ -188,13 +188,6 @@
     "slkauthor": "新",
     "bpm": 150.06
   },
-  "Identity5": {
-    "ogg": "Identity5.aac",
-    "singer": "",
-    "name": "貴族V",
-    "slkauthor": "新",
-    "bpm": 140
-  },
   "Joint": {
     "ogg": "Joint.aac",
     "singer": "",
@@ -271,6 +264,13 @@
     "name": "Proud of you",
     "slkauthor": "T3",
     "bpm": 130.0
+  },
+  "SakuraKagetsu": {
+    "ogg": "SakuraKagetsu.aac",
+    "singer": "",
+    "name": "櫻華月",
+    "slkauthor": "新",
+    "bpm": 138
   },
   "SpaceCowboy": {
     "ogg": "SpaceCowboy.aac",
