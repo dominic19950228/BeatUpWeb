@@ -26,11 +26,31 @@ BUJS.e = function(s) {
 }, BUJS.e.prototype.U = function(s) {
     var a = this,
         n = new XMLHttpRequest;
+    
     bujs.B("Downloading music"), n.open("GET", s, !0), n.responseType = "arraybuffer", n.onload = function() {
-        bujs.S ? (a.d = new ArrayBuffer(n.response.byteLength), new Uint8Array(a.d).set(new Uint8Array(n.response)), bujs.B("Touch/click to start music")) : a.o.decodeAudioData(n.response, function(s) {
-            a.w = a.J(s), a.m = a.o.currentTime, a.w.start(0), void 0 !== a.j && a.j.call(bujs.a, a)
-        }, function(s) {})
-    }, n.send()
+        bujs.S ? (
+            a.d = new ArrayBuffer(n.response.byteLength), 
+            new Uint8Array(a.d).set(new Uint8Array(n.response)), 
+            bujs.B("Touch/click to start music")
+        ) : a.o.decodeAudioData(n.response, function(s) {
+            a.w = a.J(s);
+            a.m = a.o.currentTime;
+            
+            // Get the offset value, delay playback if it's negative
+            var offsetTime = a.g && a.g.offset ? a.g.offset : 0;
+
+            // If offset is negative, delay playback; otherwise, play immediately
+            var startTime = a.o.currentTime + Math.abs(Math.min(offsetTime, 0)); // Convert negative offset to delay time
+            var adjustedOffset = Math.max(offsetTime, 0); // Ensure offset is non-negative
+
+            // Start the music, applying delay if offset is negative
+            a.w.start(startTime, adjustedOffset);
+
+            // Execute the callback function if defined
+            void 0 !== a.j && a.j.call(bujs.a, a);
+
+        }, function(s) {});
+    }, n.send();
 }, BUJS.e.prototype.J = function(s) {
     var a = this.o.createBufferSource();
     return a.buffer = s, a.connect(this.o.destination), a
@@ -479,7 +499,7 @@ BUJS.e = function(s) {
     var s = this,
         a = s.va.L(),
         n = Math.min(s.Sa + s.$a.Ms.zs, s.va.g._.length);
-    if (s.Ya) {
+    if (s.Ya || s.autoPlay) {
         if (s.Sa >= 0)
             for (var e = s.Sa; e < n; e++)
                 if (s.va.g._[e].t < a + 5) {
@@ -579,13 +599,34 @@ BUJS.e = function(s) {
     s.B(""), s.vn("#songlist-template");
     var a = $("#songlist-modal"),
         n = a.find("#songlist-container");
+
+    // 生成歌曲列表
     for (var e in s.l) {
         var t = s.l[e],
             u = document.createElement("li");
-        u.setAttribute("class", "songListItem"), u.setAttribute("songid", e), u.innerText = "[" + t.bpm.toFixed(1) + "] " + t.singer + " " + t.name + " (" + t.slkauthor + ")", u.onclick = s.Sn, n.append(u)
+        u.setAttribute("class", "songListItem"), 
+        u.setAttribute("songid", e), 
+        u.innerText = "[" + t.bpm.toFixed(1) + "] " + t.singer + " " + t.name + " (" + t.slkauthor + ")",
+        u.onclick = s.Sn, 
+        n.append(u)
     }
+
+    // 添加 Auto Play 按鈕
+    var autoPlayButton = document.createElement("button");
+    autoPlayButton.innerText = "Auto Play: OFF";
+    autoPlayButton.style.position = "absolute";
+    autoPlayButton.style.top = "10px";
+    autoPlayButton.style.right = "10px";
+    autoPlayButton.style.zIndex = "1000";
+    autoPlayButton.onclick = function() {
+        bujs.a.autoPlay = !bujs.a.autoPlay;
+        autoPlayButton.innerText = "Auto Play: " + (bujs.a.autoPlay ? "ON" : "OFF");
+    };
+    document.body.appendChild(autoPlayButton);
+
     a.modal("show")
-}, BUJS.prototype._n = function() {
+}
+, BUJS.prototype._n = function() {
     var s = document.getElementById("cvs");
     s.width = 980, s.height = 400
 }, BUJS.prototype.Sn = function() {

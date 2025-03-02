@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLK 轉 JSON</title>
+    <script>
+        function convertToJSON() {
+            let inputText = document.getElementById("inputText").value;
+            let lines = inputText.trim().split("\n");
+            let result = [];
+            
+            for (let line of lines) {
+                let parts = line.split("\t");
+                if (parts.length < 2) continue;
+                
+                let d_value = parseInt(parts[0]);
+                let e_value = parts[1].trim();
+                let f_value = parts.length > 2 ? parts[2].replace(/,/g, "").trim() : "5";
+                
+                if (!isNaN(f_value)) {
+                    f_value = parseInt(f_value);
+                } else {
+                    f_value = 5;
+                }
+                
+                if (e_value.includes("n")) {
+                    result.push({"n": f_value, "t": d_value});
+                } else if (e_value.includes("s")) {
+                    result.push({"n": 5, "t": d_value});
+                }
+            }
+            
+            let jsonOutput = JSON.stringify(result, null, 0).replace(/},/g, "},\n");
+            document.getElementById("output").textContent = jsonOutput;
+        }
+        
+        function downloadJSON() {
+            let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(document.getElementById("output").textContent);
+            let downloadAnchorNode = document.createElement("a");
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "output.json");
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+    </script>
+</head>
+<body>
+    <h2>貼上 SLK 數據並轉換為 JSON</h2>
+    <textarea id="inputText" rows="10" cols="50" placeholder="貼上資料，例如：\n127\tn,s\t9\n135\tn\t1\n..."></textarea>
+    <br>
+    <button onclick="convertToJSON()">轉換</button>
+    <button onclick="downloadJSON()">下載 JSON</button>
+    <h3>JSON 結果：</h3>
+    <pre id="output" style="border: 1px solid #ccc; padding: 10px;"></pre>
+</body>
+</html>

@@ -181,6 +181,14 @@
     "slkauthor": "dnxp",
     "bpm": 140.0
   },
+  "IdentityII": {
+    "ogg": "IdentityII.ogg",
+    "singer": "",
+    "name": "貴族II",
+    "slkauthor": "",
+    "bpm": 150,
+    "offset": 0.0
+  },
   "Identity": {
     "ogg": "Identity.aac",
     "singer": "",
@@ -362,5 +370,37 @@
     "name": "You're Already Gone",
     "slkauthor": "T3",
     "bpm": 150.0
+  },
+  "Requiem": {
+    "ogg": "Requiem.ogg",
+    "singer": "",
+    "name": "Requiem",
+    "slkauthor": "小天",
+    "bpm": 159.75,
+    "offset": -0.01
+  },
+  "Prelude In C": {
+    "ogg": "Prelude In C.ogg",
+    "singer": "",
+    "name": "Prelude In C",
+    "slkauthor": "小天",
+    "bpm": 143,
+    "offset": 0.05
+  },
+  "Child In Paradise": {
+    "ogg": "Child In Paradise.ogg",
+    "singer": "",
+    "name": "Child In Paradise",
+    "slkauthor": "小天",
+    "bpm": 128.015,
+    "offset": 0.0
+  },
+  "Sorry Sorry": {
+    "ogg": "Sorry Sorry.ogg",
+    "singer": "",
+    "name": "Sorry Sorry",
+    "slkauthor": "",
+    "bpm": 130,
+    "offset": 0.2
   }
 }
