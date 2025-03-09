@@ -69,13 +69,6 @@
     "slkauthor": "T3",
     "bpm": 150.0
   },
-  "CardcaptorSakura": {
-    "ogg": "CardcaptorSakura.aac",
-    "singer": "",
-    "name": "百變小櫻",
-    "slkauthor": "新",
-    "bpm": 132.0
-  },
   "ComeOn": {
     "ogg": "ComeOn.aac",
     "singer": "Turtles",
@@ -95,7 +88,8 @@
     "singer": "",
     "name": "死月",
     "slkauthor": "新",
-    "bpm": 160.0
+    "bpm": 160.0,
+    "offset": -0.01
   },
   "DejaVu": {
     "ogg": "DejaVu.aac",
@@ -385,7 +379,7 @@
     "name": "Prelude In C",
     "slkauthor": "小天",
     "bpm": 143,
-    "offset": 0.05
+    "offset": -0.01
   },
   "Child In Paradise": {
     "ogg": "Child In Paradise.ogg",
@@ -402,5 +396,29 @@
     "slkauthor": "",
     "bpm": 130,
     "offset": 0.2
+  },
+  "Ignoring Father": {
+    "ogg": "Ignoring Father.ogg",
+    "singer": "",
+    "name": "少理阿爸",
+    "slkauthor": "",
+    "bpm": 134,
+    "offset": 0.04
+  },
+  "CardcaptorSakura": {
+    "ogg": "CardcaptorSakura.aac",
+    "singer": "",
+    "name": "百變小櫻",
+    "slkauthor": "新",
+    "bpm": 132.0
+  },
+  "Ultraman": {
+    "ogg": "Ultraman.ogg",
+    "singer": "",
+    "name": "超人的主題曲",
+    "slkauthor": "",
+    "bpm": 155.03,
+    "offset": -0.02
   }
+
 }
