@@ -34,11 +34,18 @@
     "slkauthor": "RonBWL",
     "bpm": 101.1
   },
+  "AmericanIdiotT3": {
+    "ogg": "AmericanIdiot.aac",
+    "singer": "Greenday",
+    "name": "American Idiot",
+    "slkauthor": "T3",
+    "bpm": 186.0
+  },
   "AmericanIdiot": {
     "ogg": "AmericanIdiot.aac",
     "singer": "Greenday",
     "name": "American Idiot",
-    "slkauthor": "ticanpertrum",
+    "slkauthor": "改",
     "bpm": 186.0
   },
   "BackForMore": {
